@@ -23,7 +23,6 @@
 
 
 
-
 \begin{frame}
 \frametitle{Why does a ball swerve?}
 Bernoulli's Theorem for an inviscid flow:
@@ -51,33 +50,66 @@ The boundary layer on the side of the ball with a greater velocity becomes turbu
 
 \begin{frame}
 \frametitle{Equations}
-Lift per unit length:
+\begin{itemize}
+\item Magnus Force $\Rightarrow$ lift per unit length:
   \begin{equation*}
-   F_M = 2\pi \rho v r^2 \omega ,
+   F_L = \frac{1}{2}\rho\pi r^2 C_L \vert v \vert^2 ,
   \end{equation*}
-where $\rho$ is air density, $v$ is speed, $r$ is the radius of the ball and $\omega$ is angular velocity.\\\vspace{\baselineskip}
-Drag force:
+where $\rho$ is air density, $v$ is velocity, $r$ is the radius of the ball and $C_L$ is the lift coefficient.
+\item Drag force:
   \begin{equation*}
-   F_D = \frac{1}{2}\rho v^2 C_D \pi r^2 ,
+   F_D = \frac{1}{2}\rho\pi r^2  C_D \vert v \vert^2,
   \end{equation*}
-where $C_D$ is the dimensionless drag coefficient.\\\vspace{\baselineskip}
-Then from Newton's Second Law of Motion:
-  \begin{align}
-    \ddot{x} &= - \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_D - \frac{1}{m}\frac{\dot{y}}{\left|\mathbf{\dot{x}}\right|}F_M\\
-   \ddot{y} &= -g - \frac{1}{m}\frac{\dot{y}}{\left|\mathbf{\dot{x}}\right|}F_D + \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_M
+where $C_D$ is the dimensionless drag coefficient.
+\item It is important to note that the Magnus force acts perpendicular to the drag force, which opposes the direction of travel.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{~}
+\begin{itemize}
+  \item Considering motion in two-dimensions, we can analyse the path of the ball by looking from above and from the side.
+  \item Looking from the side, we consider the following model:
+   \begin{align}
+    \ddot{x} &= - \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_D - \frac{1}{m}\frac{\dot{z}}{\left|\mathbf{\dot{x}}\right|}F_L\\
+   \ddot{z} &= -g - \frac{1}{m}\frac{\dot{z}}{\left|\mathbf{\dot{x}}\right|}F_D + \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_L
   \end{align}
+\item The lift force $F_L$ is a consequence of top or bottom spin applied to the ball on impact.
+\item We can analyse the effects of gravity, drag and spin on the path of the ball.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{~}
+\begin{figure}
+  \begin{center}
+     \includegraphics[scale=0.5]{chipped_pass.eps}
+  \end{center}
+\end{figure}
 \end{frame}
 
 \begin{frame}
+\begin{itemize}
+\item Looking from above, the Magnus force corresponds to a \textit{lateral force}, which is a consequence of side-spin.
+We hence obtain the following model:
+\begin{align}
+    \ddot{x} &= - \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_D - \frac{1}{m}\frac{\dot{y}}{\left|\mathbf{\dot{x}}\right|}F_L\\
+   \ddot{y} &= - \frac{1}{m}\frac{\dot{y}}{\left|\mathbf{\dot{x}}\right|}F_D + \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_L
+  \end{align}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
  \frametitle{Drag crisis}
-The Reynolds number:
+\begin{itemize}
+\item The Reynolds number:
   \begin{equation*}
     Re = \frac{rv}{\nu} ,
   \end{equation*}
 where $\nu$ is kinematic viscosity.\\\vspace{\baselineskip}
-Low Reynolds number (i.e. low velocities): Laminar boundary layer separates from the ball earlier $\rightarrow$ forms wide, low-pressure wake $\rightarrow$ slows down ball.\\\vspace{\baselineskip}
-Higher Reynolds number (higher velocities): Boundary layer becomes turbulent $\rightarrow$ separates later than in laminar case $\rightarrow$ forms a narrower wake and a lower drag coefficient.\\\vspace{\baselineskip}
-A fast-moving ball may not slow down as quickly as a goalkeeper might expect.
+\item Low Reynolds number (i.e. low velocities): Laminar boundary layer separates from the ball earlier $\rightarrow$ forms wide, low-pressure wake $\rightarrow$ slows down ball.\\\vspace{\baselineskip}
+\item Higher Reynolds number (higher velocities): Boundary layer becomes turbulent $\rightarrow$ separates later than in laminar case $\rightarrow$ forms a narrower wake and a lower drag coefficient.\\\vspace{\baselineskip}
+\item A fast-moving ball may not slow down as quickly as a goalkeeper might expect.
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -92,64 +124,49 @@ A fast-moving ball may not slow down as quickly as a goalkeeper might expect.
 
 \begin{frame}
 \frametitle{Simulations}
-Simulations were run for Equations (1) and (2) in the $(x,z)$-plane (up/down) and the $(x,y)$-plane (left/right).
+\begin{itemize}
+\item Simulations were run for Equations (1) and (2) in the $(x,z)$-plane (up/down) and the $(x,y)$-plane (left/right).
 \begin{figure}
           \begin{center}
             \includegraphics[scale=0.5]{plots.png}
           \end{center}
         \end{figure}
+\end{itemize}
 \end{frame}
 
 \begin{frame}
  \frametitle{Reverse Magnus effect}
-The flight of a ball with a low angular velocity (relative to  becomes primarily dependent on the air pressure which is constantly changing. The points where the flow transitions from laminar to turbulent are different on either side of the ball, so the Magnus effect can reverse, leading to a `knuckle ball' effect.\\\vspace{\baselineskip}
-The smoothness of the ball changes the position of these transition points: A ball with a rougher surface or stitching is more likely to follow the `standard' positive Magnus effect.
+\begin{itemize}
+\item The flight of a ball with a low angular velocity (relative to  becomes primarily dependent on the air pressure which is constantly changing. The points where the flow transitions from laminar to turbulent are different on either side of the ball, so the Magnus effect can reverse, leading to a `knuckle ball' effect.\\\vspace{\baselineskip}
+\item The smoothness of the ball changes the position of these transition points: A ball with a rougher surface or stitching is more likely to follow the `standard' positive Magnus effect.
+\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{K\'arm\'an vortex street?}
-Another explanation for the fluctuation in trajectory could be the effect of a flow behind a non-rotating cylinder.
+\begin{itemize}
+\item Another explanation for the fluctuation in trajectory could be the effect of a flow behind a non-rotating cylinder.
 \begin{figure}
           \begin{center}
             \includegraphics[scale=0.65]{vortex_street.jpg}
           \end{center}
         \end{figure}
+\end{itemize}
 \end{frame}
 
 \begin{frame}
  \frametitle{Strouhal number}
-The dimensionless Strouhal number is defined as
+\begin{itemize}
+\item The dimensionless Strouhal number is defined as
   \begin{equation*}
    St = \frac{fr}{v}
   \end{equation*}
 where $f$ is the frequency of vortex shedding.\\\vspace{\baselineskip}
-In the `free kick' regime, the frequency can be estimated as $f \sim 32$s$^{-1}$.
+\item In the `free kick' regime, the frequency can be estimated as $f \sim 32$s$^{-1}$.
+\end{itemize}
 \end{frame}
 
-\begin{frame}
- \frametitle{Dimensionless equations}
-Equations (1) and (2) were made dimensionless:
-  \begin{align*}
-   \dot{v}_x &= -v_x \left|v\right| \alpha - v_y \beta\\
-   \dot{v}_y &= -v_x \left|v\right| \alpha + v_x \beta
-  \end{align*}
-where
-  \begin{align*}
-   \alpha &= \frac{u^2\rho C_D \pi r^2}{2mg}\\
-   \beta &= \frac{2u\rho\pi r^3\omega}{mg}
-  \end{align*}
-are dimensionless parameters.
-\end{frame}
 
-\begin{frame}
- \frametitle{$\alpha$ vs $\beta$}
-At high velocities the drag force dominates. As the ball slows down and reaches a critical velocity, the Magnus force takes over and the effect of spinning is amplified.
-\begin{figure}
-          \begin{center}
-            \includegraphics[scale=0.4]{alphabeta.png}
-          \end{center}
-        \end{figure}
-\end{frame}
 
 \begin{frame}{Asymptotics when looking from above}
   \begin{itemize}
@@ -187,7 +204,7 @@ At high velocities the drag force dominates. As the ball slows down and reaches 
     y(t) = \frac{1}{K_D}\log(1+tvK_D)
   \end{equation}
 \end{frame}
-\begin{frame}{}
+\begin{frame}{~}
   Now considering the equation for $\hat x$, we use the following scalings:
   \begin{equation}
     L_1 = K_L L_2^2 \qquad \epsilon = K_D L_2
