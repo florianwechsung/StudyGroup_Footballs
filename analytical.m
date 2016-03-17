@@ -1,8 +1,8 @@
-
+function [x,y] = analytical(rho)
 
 
 m = 0.5;
-rho = 1.2;
+%rho = 1.2;
 r = 0.11;
 CD = 0.47;
 omega = 3;
@@ -14,7 +14,7 @@ L2 = 30;
 epsilon = Kd * L2;
 L1 = Kl * L2^2;
 
-T = 1;
+T = 1.3;
 
 t = 0:0.01:T;
 
