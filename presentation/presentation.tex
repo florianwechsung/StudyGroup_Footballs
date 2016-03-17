@@ -248,6 +248,85 @@ where $C_D$ is the dimensionless drag coefficient.
 \end{itemize}
 \end{frame}
 
+
+
+%%%% FROM NEIL
+
+
+\begin{frame}
+\frametitle{ $3D$ Model}
+\begin{align}
+\underline{x}(0) = (0,0,0) \nonumber \\
+\underline{\dot{x}}(0)=(5,0,5) \nonumber \\ 
+\underline{s}=(0,1,0) \nonumber
+\end{align}
+\[
+\left(\begin{array}{c}
+ \ddot{x}\\
+\ddot{y}\\
+\ddot{z}\end{array} \right) = -g\left(\begin{array}{c}
+ 0\\
+0\\
+1\end{array} \right) - \frac{F_{d}}{m\sqrt{(x^2+y^2+z^2)}} \left(\begin{array}{c}
+ \dot{x}\\
+\dot{y}\\
+\dot{z}\end{array} \right) + \frac{F_m}{m}  \left(\begin{array}{c}
+ \\
+\underline{s}\\
+\hphantom{0}
+\end{array} \right) \times \left(\begin{array}{c}
+ \dot{x}\\
+\dot{y}\\
+\dot{z}\end{array} \right) 
+\] 
+
+\begin{figure}
+\centering
+\includegraphics[scale=.4]{1-1.png}
+\caption{3D projection}
+\end{figure}
+ \end{frame}
+
+
+ \begin{frame}
+ \frametitle{3D plots}
+  \begin{figure}
+\centering
+\includegraphics[scale=.4]{3d1.eps}
+\caption{Spiral projection}
+\end{figure}
+ \end{frame}
+ 
+ 
+
+ \begin{frame}
+  \begin{figure}
+\centering
+\includegraphics[scale=.4]{3d2.eps}
+\caption{Drag crisis}
+\end{figure}
+ \end{frame}
+
+\begin{frame}
+\frametitle{Drag Crisis}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.5]{dragcrisis.eps}
+\caption{Drag crisis}
+\end{figure}
+\end{frame}
+
+
+%%%% END FROM NEIL
+
+
+
+
+
+
+
+
+
 \begin{frame}{Conclusions --- What have we done?}
   \begin{itemize}
     \item 2D Models for side view and birds eye view.
