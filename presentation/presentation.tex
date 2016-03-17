@@ -6,7 +6,7 @@
 %\setbeamercolor{block title example}{use={normal text,example text},fg=example text.fg!75!normal text.fg,bg=normal text.bg!75!black}
 
 \title{Poor players or dodgy design: How important is the choice of football in the modern game?}
-\author{Neil Chada, Peter De Ford, Caoimhe Rooney, Bogdan Toader, Florian Wechsung and Tim Whitbread}
+\author{Neil Chada, Peter De Ford, Caoimhe Rooney, Bogdan Toader, \\Florian Wechsung and Tim Whitbread}
 \date{Mentor: Dr Timothy Reis}
 
 \usepackage{mathtools}
@@ -51,14 +51,14 @@ The boundary layer on the side of the ball with a greater velocity becomes turbu
 \begin{frame}
 \frametitle{Equations}
 \begin{itemize}
-\item Magnus Force $\Rightarrow$ lift per unit length:
+\item Magnus Force:
   \begin{equation*}
-   F_L = \frac{1}{2}\rho\pi r^2 C_L \vert v \vert^2 ,
+   F_L = \frac83\pi r^2  \rho C_L \vert v \vert^2 ,
   \end{equation*}
-where $\rho$ is air density, $v$ is velocity, $r$ is the radius of the ball and $C_L$ is the lift coefficient.
+where $\rho$ is air density, $v$ is velocity, $r$ is the radius of the ball and $C_L$ is the dimensionless lift coefficient.
 \item Drag force:
   \begin{equation*}
-   F_D = \frac{1}{2}\rho\pi r^2  C_D \vert v \vert^2,
+   F_D = \frac{1}{2}\pi r^2  \rho C_D \vert v \vert^2,
   \end{equation*}
 where $C_D$ is the dimensionless drag coefficient.
 \item It is important to note that the Magnus force acts perpendicular to the drag force, which opposes the direction of travel.
@@ -70,7 +70,7 @@ where $C_D$ is the dimensionless drag coefficient.
   \item Considering motion in two-dimensions, we can analyse the path of the ball by looking from above and from the side.
   \item Looking from the side, we consider the following model:
    \begin{align}
-    \ddot{x} &= - \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_D - \frac{1}{m}\frac{\dot{z}}{\left|\mathbf{\dot{x}}\right|}F_L\\
+    \ddot{x} &= \hphantom{-g}- \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_D - \frac{1}{m}\frac{\dot{z}}{\left|\mathbf{\dot{x}}\right|}F_L\\
    \ddot{z} &= -g - \frac{1}{m}\frac{\dot{z}}{\left|\mathbf{\dot{x}}\right|}F_D + \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_L
   \end{align}
 \item The lift force $F_L$ is a consequence of top or bottom spin applied to the ball on impact.
@@ -86,97 +86,23 @@ where $C_D$ is the dimensionless drag coefficient.
 \end{figure}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Birds eye view}
 \begin{itemize}
 \item Looking from above, the Magnus force corresponds to a \textit{lateral force}, which is a consequence of side-spin.
-We hence obtain the following model:
+  \begin{center}
+    \includegraphics[width=5cm]{rob-carlos-sketch.jpg}
+  \end{center}
+\item We hence obtain the following model:
+\end{itemize}
 \begin{align}
     \ddot{x} &= - \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_D - \frac{1}{m}\frac{\dot{y}}{\left|\mathbf{\dot{x}}\right|}F_L\\
    \ddot{y} &= - \frac{1}{m}\frac{\dot{y}}{\left|\mathbf{\dot{x}}\right|}F_D + \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_L
   \end{align}
-\end{itemize}
 \end{frame}
-
-
-\begin{frame}
- \frametitle{Drag crisis}
-\begin{itemize}
-\item The Reynolds number:
-  \begin{equation*}
-    Re = \frac{rv}{\nu} ,
-  \end{equation*}
-where $\nu$ is kinematic viscosity.\\\vspace{\baselineskip}
-\item Low Reynolds number (i.e. low velocities): Laminar boundary layer separates from the ball earlier $\rightarrow$ forms wide, low-pressure wake $\rightarrow$ slows down ball.\\\vspace{\baselineskip}
-\item Higher Reynolds number (higher velocities): Boundary layer becomes turbulent $\rightarrow$ separates later than in laminar case $\rightarrow$ forms a narrower wake and a lower drag coefficient.\\\vspace{\baselineskip}
-\item A fast-moving ball may not slow down as quickly as a goalkeeper might expect.
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Drag crisis}
- \begin{figure}
-          \begin{center}
-            \includegraphics[scale=0.52]{drag_crisis.jpg}
-          \end{center}
-        \end{figure}
-%(Taken from https://www.grc.nasa.gov)
-\end{frame}
-
-\begin{frame}
-\frametitle{Simulations}
-\begin{itemize}
-\item Simulations were run for Equations (1) and (2) in the $(x,z)$-plane (up/down) and the $(x,y)$-plane (left/right).
-\begin{figure}
-          \begin{center}
-            \includegraphics[scale=0.5]{plots.png}
-          \end{center}
-        \end{figure}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
- \frametitle{Reverse Magnus effect}
-\begin{itemize}
-\item The flight of a ball with a low angular velocity (relative to  becomes primarily dependent on the air pressure which is constantly changing. The points where the flow transitions from laminar to turbulent are different on either side of the ball, so the Magnus effect can reverse, leading to a `knuckle ball' effect.\\\vspace{\baselineskip}
-\item The smoothness of the ball changes the position of these transition points: A ball with a rougher surface or stitching is more likely to follow the `standard' positive Magnus effect.
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{K\'arm\'an vortex street?}
-\begin{itemize}
-\item Another explanation for the fluctuation in trajectory could be the effect of a flow behind a non-rotating cylinder.
-\begin{figure}
-          \begin{center}
-            \includegraphics[scale=0.65]{vortex_street.jpg}
-          \end{center}
-        \end{figure}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
- \frametitle{Strouhal number}
-\begin{itemize}
-\item The dimensionless Strouhal number is defined as
-  \begin{equation*}
-   St = \frac{fr}{v}
-  \end{equation*}
-where $f$ is the frequency of vortex shedding.\\\vspace{\baselineskip}
-\item In the `free kick' regime, the frequency can be estimated as $f \sim 32$s$^{-1}$.
-\end{itemize}
-\end{frame}
-
-
 
 \begin{frame}{Asymptotics when looking from above}
   \begin{itemize}
-    \item Let's consider the case of looking at the pitch from above.
-  \end{itemize}
-  \begin{center}
-    \includegraphics[width=5cm]{rob-carlos-sketch.jpg}
-  \end{center}
-  \begin{itemize}
-    \item The model is then given by 
+    \item Write $K_D v^2 = \frac{F_D}{m}$ and $K_L v^2 = \frac{F_L}{m}$ to obtain
       \begin{gather}
         \ddot x = - K_D \dot x \sqrt{\dot{x}^2 + \dot{y}^2} - K_L \dot y \sqrt{\dot{x}^2 + \dot{y}^2}\\
         \ddot y = - K_D \dot y \sqrt{\dot{x}^2 + \dot{y}^2}  + K_L \dot x \sqrt{\dot{x}^2 + \dot{y}^2}\\
@@ -217,19 +143,17 @@ where $f$ is the frequency of vortex shedding.\\\vspace{\baselineskip}
       &\approx \dot{\hat y} \left(1+ \frac12a^2 \epsilon^2 \frac{\dot{\hat x}^2}{\dot{\hat y}^2}\right) \left( \epsilon \dot{\hat x} + \dot{\hat y} \right)
     \end{aligned}
   \end{equation}
-  Now write 
-  \begin{equation}
-    \hat x = \hat x^0 + \epsilon \hat x^1  + \ldots
-  \end{equation}
+  Now write $\hat x = \hat x^0 + \epsilon \hat x^1  + \ldots$
   and obtain
   \begin{equation}
     \begin{aligned}
       \ddot{{\hat{x}}}^0 &= - \left( \dot{\hat y} \right) ^2\\
-      \ddot{\hat x}^1  &= - \dot{\hat y} \dot{\hat x}^0.
+      \ddot{\hat x}^1  &= - \dot{\hat y} \dot{\hat x}^0
     \end{aligned}
   \end{equation}
+  (both with homogenous boundary condition at zero).
 \end{frame}
-\begin{frame}
+\begin{frame}{Solving the asymptotics}
     \begin{itemize}
       \item These can be solved and we obtain our solutions:
     \end{itemize}
@@ -263,6 +187,66 @@ where $f$ is the frequency of vortex shedding.\\\vspace{\baselineskip}
     \end{figure}
   \end{center}
 \end{frame}
+
+
+
+\begin{frame}
+ \frametitle{Drag crisis}
+\begin{itemize}
+\item The Reynolds number:
+  \begin{equation*}
+    Re = \frac{rv}{\nu} ,
+  \end{equation*}
+where $\nu$ is kinematic viscosity.\\\vspace{\baselineskip}
+\item Low Reynolds number (i.e. low velocities): Laminar boundary layer separates from the ball earlier $\rightarrow$ forms wide, low-pressure wake $\rightarrow$ slows down ball.\\\vspace{\baselineskip}
+\item Higher Reynolds number (higher velocities): Boundary layer becomes turbulent $\rightarrow$ separates later than in laminar case $\rightarrow$ forms a narrower wake and a lower drag coefficient.\\\vspace{\baselineskip}
+\item A fast-moving ball may not slow down as quickly as a goalkeeper might expect.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Drag crisis}
+ \begin{figure}
+          \begin{center}
+            \includegraphics[scale=0.52]{drag_crisis.jpg}
+          \end{center}
+        \end{figure}
+%(Taken from https://www.grc.nasa.gov)
+\end{frame}
+
+\begin{frame}
+ \frametitle{Reverse Magnus effect}
+\begin{itemize}
+\item The flight of a ball with a low angular velocity (relative to  becomes primarily dependent on the air pressure which is constantly changing. The points where the flow transitions from laminar to turbulent are different on either side of the ball, so the Magnus effect can reverse, leading to a `knuckle ball' effect.\\\vspace{\baselineskip}
+\item The smoothness of the ball changes the position of these transition points: A ball with a rougher surface or stitching is more likely to follow the `standard' positive Magnus effect.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{K\'arm\'an vortex street?}
+\begin{itemize}
+\item Another explanation for the fluctuation in trajectory could be the effect of a flow behind a non-rotating cylinder.
+\begin{figure}
+          \begin{center}
+            \includegraphics[scale=0.65]{vortex_street.jpg}
+          \end{center}
+        \end{figure}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Strouhal number}
+\begin{itemize}
+\item The dimensionless Strouhal number is defined as
+  \begin{equation*}
+   St = \frac{fr}{v}
+  \end{equation*}
+where $f$ is the frequency of vortex shedding.\\\vspace{\baselineskip}
+\item In the `free kick' regime, the frequency can be estimated as $f \sim 32$s$^{-1}$.
+\end{itemize}
+\end{frame}
+
+
 \end{document}
 
 
