@@ -5,7 +5,7 @@ m = 0.5;
 %rho = 1.2;
 r = 0.11;
 CD = 0.47;
-omega = 3;
+omega = 10;
 v = 30;
 Kd = 1/(2*m) * rho * CD * pi * r^2;
 Kl = 16/(3*m) * pi^2 * r^3 * omega * rho/v;
@@ -14,7 +14,7 @@ L2 = 30;
 epsilon = Kd * L2;
 L1 = Kl * L2^2;
 
-T = 1.3;
+T = 1.26;
 
 t = 0:0.01:T;
 
