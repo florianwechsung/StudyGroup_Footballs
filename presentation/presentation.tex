@@ -151,9 +151,89 @@ At high velocities the drag force dominates. As the ball slows down and reaches 
         \end{figure}
 \end{frame}
 
-
-
-
+\begin{frame}{Asymptotics when looking from above}
+  \begin{itemize}
+    \item Let's consider the case of looking at the pitch from above.
+  \end{itemize}
+  \begin{center}
+    \includegraphics[width=5cm]{rob-carlos-sketch.jpg}
+  \end{center}
+  \begin{itemize}
+    \item The model is then given by 
+      \begin{gather}
+        \ddot x = - K_D \dot x \sqrt{\dot{x}^2 + \dot{y}^2} - K_L \dot y \sqrt{\dot{x}^2 + \dot{y}^2}\\
+        \ddot y = - K_D \dot y \sqrt{\dot{x}^2 + \dot{y}^2}  + K_L \dot x \sqrt{\dot{x}^2 + \dot{y}^2}\\
+        x(0)=0=y(0) \quad x'(0)=0 \quad y'(0)=v
+      \end{gather}
+  \end{itemize}
+\end{frame}
+\begin{frame}{Non-Dimensionalization}
+  \begin{itemize}
+    \item We rescale: 
+  \end{itemize}
+  \begin{equation}
+    t = \tau \hat t \qquad x= L_1 \hat x \qquad y = L_2 \hat y
+  \end{equation}
+  and assume that for $y$ only the drag is of relevance.  (Distance towards goal much bigger than sideways motion.)
+  Then we obtain 
+  \begin{equation}
+    \begin{aligned}
+      \ddot{\hat x} &= - \dot{\hat y} \sqrt{1 + \frac{L_1^2}{L_2^2}\frac{\dot{\hat x}^2}{\dot{\hat y}^2}} \left( L_2 K_D \dot{\hat x} + \frac{L_2^2 K_L}{L_1} \dot{\hat y} \right)\\
+       \ddot{\hat y} &= - \dot{\hat y}^2 L_2 K_D
+    \end{aligned}
+  \end{equation}
+  The equation for $\hat y$ can be solved analytically and can be redimensionalized:
+  \begin{equation}
+    y(t) = \frac{1}{K_D}\log(1+tvK_D)
+  \end{equation}
+\end{frame}
+\begin{frame}{}
+  Now considering the equation for $\hat x$, we use the following scalings:
+  \begin{equation}
+    L_1 = K_L L_2^2 \qquad \epsilon = K_D L_2
+  \end{equation}
+  and write $a= \frac{K_L}{K_D}$.
+  That gives 
+  \begin{equation}
+    \begin{aligned}
+    \ddot{\hat x} &= - \dot{\hat y} \sqrt{1+ a^2 \epsilon^2 \frac{\dot{\hat x}^2}{\dot{\hat y}^2}} \left( \epsilon \dot{\hat x} + \dot{\hat y} \right) \\
+      &\approx \dot{\hat y} \left(1+ \frac12a^2 \epsilon^2 \frac{\dot{\hat x}^2}{\dot{\hat y}^2}\right) \left( \epsilon \dot{\hat x} + \dot{\hat y} \right)
+    \end{aligned}
+  \end{equation}
+  Now write 
+  \begin{equation}
+    \hat x = \hat x^0 + \epsilon \hat x^1  + \ldots
+  \end{equation}
+  and obtain
+  \begin{equation}
+    \begin{aligned}
+      \ddot{{\hat{x}}}^0 &= - \left( \dot{\hat y} \right) ^2\\
+      \ddot{\hat x}^1  &= - \dot{\hat y} \dot{\hat x}^0.
+    \end{aligned}
+  \end{equation}
+\end{frame}
+\begin{frame}
+    \begin{itemize}
+      \item These can be solved and we obtain our solutions:
+    \end{itemize}
+    \begin{equation}
+      \begin{aligned}
+        \hat x^0 &=\frac{K_L \log \left(t v K_D+1\right)}{K_D^2}-\frac{t v K_L}{K_D}\\
+        \epsilon \hat x^1 &= \frac{v K_L \left(t \log \left(t v K_D+1\right)+\frac{2 \log \left(t v K_D+1\right)}{v K_D}-t\right)}{K_D}-\frac{t v K_L}{K_D}
+      \end{aligned}
+    \end{equation}
+\end{frame}
+\begin{frame}{Quality of the Asymptotics}
+  \begin{itemize}
+    \item Lets consider a kick at $30$m/s with $3$ revolutions per second.
+    \item We compare the analytical solution to a numerical solution.
+  \end{itemize}
+  \begin{center}
+    \begin{figure}
+      \caption{}
+    \end{figure}
+  \end{center}
+\end{frame}
 \end{document}
 
 
