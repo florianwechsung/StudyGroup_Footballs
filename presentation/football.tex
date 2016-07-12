@@ -1,0 +1,179 @@
+\documentclass{beamer}
+
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  \usefonttheme[onlymath]{serif}
+}
+
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+
+
+% Author.
+\author{Neil Chada, Peter De Ford, Caoimhe Rooney, Bogdan Toader, Florian Wechsung and Tim Whitbread}
+
+
+\date{Mentor: Dr Timothy Reis}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+ \titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Why does a ball swerve?}
+Bernoulli's Theorem for an inviscid flow:
+\begin{equation*}
+ \frac{\left|\mathbf{v}\right|^2}{2} + p = const.
+\end{equation*}
+\begin{figure}
+          \begin{center}
+            \includegraphics[scale=1.6]{bernoulli.png}
+          \end{center}
+        \end{figure}
+%(Taken from https://www.comsol.com/blogs/magnus-effect-world-cup-match-ball/)
+\end{frame}
+
+\begin{frame}
+ \frametitle{Why does a ball swerve?}
+The boundary layer on the side of the ball with a greater velocity becomes turbulent and separates from the ball later than the laminar boundary layer. The wake then becomes deflected and so the ball is `pushed' towards the direction of spin.
+\begin{figure}
+          \begin{center}
+            \includegraphics[scale=1]{deflection.png}
+          \end{center}
+        \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Equations}
+Lift per unit length:
+  \begin{equation*}
+   F_M = 2\pi \rho v r^2 \omega ,
+  \end{equation*}
+where $\rho$ is air density, $v$ is speed, $r$ is the radius of the ball and $\omega$ is angular velocity.\\\vspace{\baselineskip}
+Drag force:
+  \begin{equation*}
+   F_D = \frac{1}{2}\rho v^2 C_D \pi r^2 ,
+  \end{equation*}
+where $C_D$ is the dimensionless drag coefficient.\\\vspace{\baselineskip}
+Then from Newton's Second Law of Motion:
+  \begin{align}
+    \ddot{x} &= - \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_D - \frac{1}{m}\frac{\dot{y}}{\left|\mathbf{\dot{x}}\right|}F_M\\
+   \ddot{y} &= -g - \frac{1}{m}\frac{\dot{y}}{\left|\mathbf{\dot{x}}\right|}F_D + \frac{1}{m}\frac{\dot{x}}{\left|\mathbf{\dot{x}}\right|}F_M
+  \end{align}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Drag crisis}
+The Reynolds number:
+  \begin{equation*}
+    Re = \frac{rv}{\nu} ,
+  \end{equation*}
+where $\nu$ is kinematic viscosity.\\\vspace{\baselineskip}
+Low Reynolds number (i.e. low velocities): Laminar boundary layer separates from the ball earlier $\rightarrow$ forms wide, low-pressure wake $\rightarrow$ slows down ball.\\\vspace{\baselineskip}
+Higher Reynolds number (higher velocities): Boundary layer becomes turbulent $\rightarrow$ separates later than in laminar case $\rightarrow$ forms a narrower wake and a lower drag coefficient.\\\vspace{\baselineskip}
+A fast-moving ball may not slow down as quickly as a goalkeeper might expect.
+\end{frame}
+
+\begin{frame}
+\frametitle{Drag crisis}
+ \begin{figure}
+          \begin{center}
+            \includegraphics[scale=0.52]{drag_crisis.jpg}
+          \end{center}
+        \end{figure}
+%(Taken from https://www.grc.nasa.gov)
+\end{frame}
+
+\begin{frame}
+\frametitle{Simulations}
+Simulations were run for Equations (1) and (2) in the $(x,z)$-plane (up/down) and the $(x,y)$-plane (left/right).
+\begin{figure}
+          \begin{center}
+            \includegraphics[scale=0.5]{plots.png}
+          \end{center}
+        \end{figure}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Reverse Magnus effect}
+The flight of a ball with a low angular velocity (relative to  becomes primarily dependent on the air pressure which is constantly changing. The points where the flow transitions from laminar to turbulent are different on either side of the ball, so the Magnus effect can reverse, leading to a `knuckle ball' effect.\\\vspace{\baselineskip}
+The smoothness of the ball changes the position of these transition points: A ball with a rougher surface or stitching is more likely to follow the `standard' positive Magnus effect.
+\end{frame}
+
+\begin{frame}
+\frametitle{K\'arm\'an vortex street?}
+Another explanation for the fluctuation in trajectory could be the effect of a flow behind a non-rotating cylinder.
+\begin{figure}
+          \begin{center}
+            \includegraphics[scale=0.65]{vortex_street.jpg}
+          \end{center}
+        \end{figure}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Strouhal number}
+The dimensionless Strouhal number is defined as
+  \begin{equation*}
+   St = \frac{fr}{v}
+  \end{equation*}
+where $f$ is the frequency of vortex shedding.\\\vspace{\baselineskip}
+In the `free kick' regime, the frequency can be estimated as $f \sim 32$s$^{-1}$.
+\end{frame}
+
+\begin{frame}
+ \frametitle{Dimensionless equations}
+Equations (1) and (2) were made dimensionless:
+  \begin{align*}
+   \dot{v}_x &= -v_x \left|v\right| \alpha - v_y \beta\\
+   \dot{v}_y &= -v_x \left|v\right| \alpha + v_x \beta
+  \end{align*}
+where
+  \begin{align*}
+   \alpha &= \frac{u^2\rho C_D \pi r^2}{2mg}\\
+   \beta &= \frac{2u\rho\pi r^3\omega}{mg}
+  \end{align*}
+are dimensionless parameters.
+\end{frame}
+
+\begin{frame}
+ \frametitle{$\alpha$ vs $\beta$}
+At high velocities the drag force dominates. As the ball slows down and reaches a critical velocity, the Magnus force takes over and the effect of spinning is amplified.
+\begin{figure}
+          \begin{center}
+            \includegraphics[scale=0.4]{alphabeta.png}
+          \end{center}
+        \end{figure}
+\end{frame}
+
+
+\end{document}
